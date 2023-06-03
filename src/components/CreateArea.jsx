@@ -13,7 +13,7 @@ function CreateArea(props) {
 
   function handleChange(event) {
     const { name, value } = event.target;
-
+    // console.log(event.target);
     setNote(prevNote => {
       return {
         ...prevNote,
@@ -23,6 +23,19 @@ function CreateArea(props) {
   }
 
   function submitNote(event) {
+
+    var check1=0,check2=0,i=0;
+
+    for(i=0;i<note.content.length;i++)
+    {
+      if(note.content[i]!==" ") {check1=1; break;}
+    }
+    for(i=0;i<note.title.length;i++)
+     {
+       if(note.title[i]!==" ") {check2=1; break;}
+     }
+    
+    if(check1===1 && check2===1) 
     props.onAdd(note);
     setNote({
       title: "",
