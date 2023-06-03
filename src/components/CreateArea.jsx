@@ -25,7 +25,7 @@ function CreateArea(props) {
   function submitNote(event) {
 
     var check1=0,check2=0,i=0;
-
+  
     for(i=0;i<note.content.length;i++)
     {
       if(note.content[i]!==" ") {check1=1; break;}
